@@ -107,9 +107,7 @@
   width: 100% !important;
 }
 
-.ui.menu, .ui.header, body, a.nav-link {
-  font-family: 'Noto Sans KR' !important;
-}
+
 
 .ui.menu .item img.logo {
   margin-right: 1.5em;
@@ -133,14 +131,36 @@
       font-size: 3.5rem;
   }
 }
+.stitch{
+  border:1px dashed white !important;
+}
+
+.ui.grey.button:active, .ui.secondary.button:active, .ui.secondary.buttons .button:active{
+  background-color:magenta !important;
+}
 
 .tab-pane.fade>img {
   width: 30vw;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Noto Sans KR', sans-serif;
+html{
+  cursor: url("images/favicon/favicon-32x32.png"),auto;};
 }
+
+
+.ui.accordion .title:not(.ui),.ui.card>.content>.header, .ui.cards>.card>.content>.header,html,h1, h2, h3, h4, h5, h6, .ui.menu, .ui.header, body, a.nav-link {
+  font-family: 'Noto Sans KR', sans-serif !important;
+}
+
+a ,a:hover{
+  color: white !important;
+}
+
+.image>img{
+  width:100%;
+}
+
+
 
 .nav-scroller {
   position: relative;

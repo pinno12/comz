@@ -5,6 +5,11 @@
 // but feel free to use whatever libraries or frameworks you'd like through `package.json`.
 const express = require("express");
 const app = express();
+const nunjucks = require('nunjucks');
+nunjucks.configure('views', {
+  autoescape: true,
+  express: app
+});
 
 // our default array of dreams
 const dreams = [
@@ -18,8 +23,8 @@ const dreams = [
 app.use(express.static("public"));
 
 // https://expressjs.com/en/starter/basic-routing.html
-app.get("/", (request, response) => {
-  response.sendFile(__dirname + "/views/index.html");
+app.get('/', function(req, res) {
+  res.render('index.html');
 });
 
 // send the default array of dreams to the webpage
@@ -32,3 +37,4 @@ app.get("/dreams", (request, response) => {
 app.listen(2000, () => {
   console.log("running at ( http://localhost:2000/ ) !");
 });
+
