@@ -60,26 +60,35 @@
           </a>
         </div>
         <div class="" id="navbarsExample07">
-          <button class="ui secondary button col stitch">우</button>
-          <button class="ui grey button col stitch">븐</button>
-          <button class="ui secondary button col stitch">다</button>
-          <button class="ui grey button col stitch">이</button>
-          <button class="ui secondary button col stitch">마</button>
-          <button class="ui grey button col stitch">루</button>
-          <button class="ui secondary button col stitch">토</button>
-          <button class="ui grey button col stitch">탈</button>
-          <button class="ui secondary button stitch">봉</button>
-          <button class="ui grey button stitch">제</button>
-          <button class="ui secondary button stitch">공</button>
-          <button class="ui grey button stitch">장</button>
+          {% set name = ['우','븐','다','이','마','루','토','탈','봉','제','공','장']%}
+          {%for name in name%}
+          {% if loop.index %2 ==0%}
+          <button class="ui inverted button col white-stitch">{{name}}</button>
+          {% else %}
+          <button class="ui basic button bg-white col black-stitch">{{name}}</button>
+          {% endif %}
+          {% endfor %}
+
         </div>
       </div>
     </nav>
   </header>
 
-  <div class="row">
+  <!-- <div class="row mt-4">
 
-  </div>
+    {% set name = ['우','븐','다','이','마','루','토','탈','봉','제','공','장']%}
+    {%for name in name%}
+    {% if loop.index %2 ==0%}
+    <button class="ui inverted button col white-stitch">{{name}}</button>
+    {% else %}
+    <button class="ui basic button bg-white col black-stitch">{{name}}</button>
+    {% endif %}
+    {% endfor %}
+    
+
+
+
+  </div> -->
 
 
   <main role="main" class="flex-shrink-0 mt-4 py-5 container">
@@ -91,7 +100,7 @@
             <img src="images/brands/1.png">
           </div>
           <div class="content">
-            <a class="header text-white">더블 리틀문</h3>
+            <a class="header text-white">더블 리틀문</a>
             <div class="meta">
               <span>2019-2020</span>
             </div>
@@ -174,27 +183,29 @@
         { title: '리우 옴므', img:9, year: '2017',  url: 'https://lieuhomme.com/index.html'}
     ]%}
 
-    {% for item in items %}
-      <div class="card" >    
-  <div class="ui move up reveal image">
-    <div class="visible content">
-      <a  target="_blank" href="{{ item.url }}"> <img src="images/brands/{{ item.img }}.png"></a>
-    </div>
-    <div class="hidden content">
-      <a  target="_blank" href="{{ item.url }}">  <h1 class="text-center ">{{ item.title }}</h1></a>
-    </div>
-  </div>
+      {% for item in items %}
+      <div class="card">
+        <div class="ui move up reveal image">
+          <div class="visible content">
+            <a target="_blank" href="{{ item.url }}"> <img src="images/brands/{{ item.img }}.png"></a>
+          </div>
+          <div class="hidden content">
+            <a target="_blank" href="{{ item.url }}">
+              <h1 class="text-center ">{{ item.title }}</h1>
+            </a>
+          </div>
+        </div>
 
-  <div class="content">
-    <a class="header" target="_blank" href="{{ item.url }}">{{ item.title }}</a>
-    <div class="meta">
-      <a  target="_blank" href="{{ item.url }}">{{ item.year }}</a>
-    </div>
-  </div>
-</div>
-  {% endfor %}
- 
-  
+        <div class="content">
+          <a class="header" target="_blank" href="{{ item.url }}">{{ item.title }}</a>
+          <div class="meta">
+            <a target="_blank" href="{{ item.url }}">{{ item.year }}</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+
     </div>
     <h4 class="ui horizontal inverted divider col-12">
       꼼즈에게 묻습니다
@@ -227,7 +238,7 @@
 
       <div class="ui tertiary inverted segment compact col-lg-4 my-0">
         <div class="image text-center">
-       
+
           <em data-emoji=":adult_tone2:" class="big"></em>
         </div>
         <div class="ui tertiary inverted segment">
@@ -269,19 +280,19 @@
         </div>
       </div>
     </div>
-    <div class = "row bg-white my-5">
+    <div class="row bg-white my-5">
       <div class="ui placeholder segment">
         <div class="ui icon header">
           <i class="tshirt icon"></i>
-          프로모션 문의는 <em class = "text-dark">010 4733 9296</em> 박영주로 부탁드립니다.
+          프로모션 문의는 <em class="text-dark">010 4733 9296</em> 박영주로 부탁드립니다.
         </div>
         <div class="ui secondary button">카카오톡 문의하기</div>
       </div>
     </div>
 
-    
 
-    
+
+
 
   </main>
 
@@ -298,7 +309,8 @@
             전화| 010-4733-9296 <br />
             <a href="mailto:comzcomz@naver.com" class="text-white">대표| 박영주 comzcom</a>
             <br>
-            꼼즈 디자인은 <a href="https://www.jaview.ga">자뷰</a>와 함께 하고 있습니다.
+            꼼즈 디자인은 <a class="text-grey" href="https://www.jaview.ga"><span
+                class="ui inverted purple text">자뷰</span></a>와 함께 하고 있습니다.
           </small>
         </div>
       </div>
